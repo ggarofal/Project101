@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://conib7mbsyyrj"]
+
+[ext_resource type="Script" uid="uid://b0tv0gvwf344q" path="res://character_body_2d.gd" id="1_3hls8"]
+[ext_resource type="Texture2D" uid="uid://tqdd3kc87r60" path="res://Firefly_RemoveBackground.png" id="2_hbghi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjexd"]
+size = Vector2(464, 305)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qk2wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqxw8"]
+
+[node name="Level1" type="Node2D" unique_id=1857475526]
+
+[node name="Character" type="CharacterBody2D" parent="." unique_id=422130712]
+position = Vector2(397, 293)
+scale = Vector2(0.31869498, 0.31999877)
+script = ExtResource("1_3hls8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Character" unique_id=795140404]
+position = Vector2(219, 44)
+scale = Vector2(-0.96000004, 1)
+texture = ExtResource("2_hbghi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=1971076423]
+position = Vector2(218, 43.5)
+shape = SubResource("RectangleShape2D_bjexd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=42558225]
+position = Vector2(537, 651)
+scale = Vector2(7.400001, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=718972186]
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2122724951]
+position = Vector2(1188, 13278.999)
+scale = Vector2(3.4325368, 2170.6296)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1456654586]
+shape = SubResource("RectangleShape2D_fqxw8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=474149556]
+position = Vector2(-50, 254.00003)
+rotation = 3.1415927
+scale = Vector2(5.0399184, 46.590015)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1350669958]
+shape = SubResource("RectangleShape2D_fqxw8")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1990768907]
+position = Vector2(512.99994, -5)
+rotation = 3.138017
+scale = Vector2(7.400001, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=98720996]
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
