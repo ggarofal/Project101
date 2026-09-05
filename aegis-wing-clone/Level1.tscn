@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://muk7ogddmqoc"]
+
+[ext_resource type="PackedScene" uid="uid://nagf7oi621dx" path="res://player.tscn" id="1_kyxg0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qk2wm"]
+
+[node name="Level1" type="Node2D" unique_id=297095696]
+
+[node name="WorldBorder" type="StaticBody2D" parent="." unique_id=2089165088]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Up" type="CollisionShape2D" parent="WorldBorder" unique_id=665855416]
+position = Vector2(0, 648)
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
+
+[node name="Down" type="CollisionShape2D" parent="WorldBorder" unique_id=1915618504]
+position = Vector2(1152, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
+
+[node name="Left" type="CollisionShape2D" parent="WorldBorder" unique_id=1646410628]
+position = Vector2(1152, 648)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
+
+[node name="Right" type="CollisionShape2D" parent="WorldBorder" unique_id=1110808573]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_qk2wm")
+
+[node name="Player" parent="." unique_id=752163641 instance=ExtResource("1_kyxg0")]
+position = Vector2(128, 64)

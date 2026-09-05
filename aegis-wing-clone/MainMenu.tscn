@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dvm4qdxrl5rti"]
+
+[ext_resource type="Script" uid="uid://xr5xfbknnxmi" path="res://menu_manager.gd" id="1_b3bc3"]
+[ext_resource type="PackedScene" uid="uid://muk7ogddmqoc" path="res://Level1.tscn" id="2_eiy7p"]
+
+[sub_resource type="GDScript" id="GDScript_y11cm"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+"
+
+[node name="MainMenu" type="Control" unique_id=41152191]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MainContainer" type="MarginContainer" parent="." unique_id=780019669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3bc3")
+level1 = ExtResource("2_eiy7p")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="MainContainer" unique_id=855750019]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Play"
+icon_alignment = 1
+script = SubResource("GDScript_y11cm")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="MainContainer/StartButton" to="MainContainer" method="_on_button_pressed"]
