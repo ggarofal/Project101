@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://n34cwlrur74x"]
+
+[ext_resource type="Texture2D" uid="uid://c4uvmw88vc1h6" path="res://assets/images/others/soccer.svg" id="1_1m5pe"]
+[ext_resource type="Script" uid="uid://cfnhli0f53qgp" path="res://scripts/soccer.gd" id="1_twfvg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tuyoq"]
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1m5pe"]
+radius = 49.010204
+
+[node name="Soccer" type="RigidBody2D" unique_id=2021422438]
+collision_layer = 4
+collision_mask = 7
+mass = 0.044
+physics_material_override = SubResource("PhysicsMaterial_tuyoq")
+script = ExtResource("1_twfvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1961900882]
+position = Vector2(192, 118.5)
+scale = Vector2(0.52577317, 0.5103093)
+texture = ExtResource("1_1m5pe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1455123672]
+position = Vector2(191, 119)
+shape = SubResource("CircleShape2D_1m5pe")

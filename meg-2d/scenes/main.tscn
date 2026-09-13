@@ -2,9 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://b1bg3vrtm0erc" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://cvurqp6nufb8p" path="res://icon.svg" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://n34cwlrur74x" path="res://scenes/soccer.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://cgkrnas8wfuru" path="res://assets/images/others/floor.jpg" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ljtf"]
 size = Vector2(119, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61re2"]
+size = Vector2(123.5, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(3608, 43)
 
 [node name="Main" type="Node2D" unique_id=2129665308]
 
@@ -23,3 +31,26 @@ shape = SubResource("RectangleShape2D_1ljtf")
 
 [node name="Player" parent="." unique_id=1015608687 instance=ExtResource("1_o5qli")]
 position = Vector2(96, 87)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=913764453]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=720063461]
+position = Vector2(286, 301)
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=764447489]
+position = Vector2(285.75, 299.5)
+shape = SubResource("RectangleShape2D_61re2")
+
+[node name="Soccer" parent="." unique_id=2021422438 instance=ExtResource("3_sugp2")]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1656493857]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=707569474]
+position = Vector2(1525.4999, 623.75)
+scale = Vector2(3.5909998, 0.07423968)
+texture = ExtResource("4_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=793129155]
+position = Vector2(1534, 626.5)
+shape = SubResource("RectangleShape2D_jyhfs")

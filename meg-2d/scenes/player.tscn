@@ -251,6 +251,8 @@ size = Vector2(67, 79)
 
 [node name="Player" type="CharacterBody2D" unique_id=1015608687]
 position = Vector2(-2, 0)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2037970742]
@@ -265,3 +267,13 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1529491049]
 position = Vector2(0.5, 13.5)
 shape = SubResource("RectangleShape2D_1ljtf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=109209478]
+limit_left = 0
+limit_top = 0
+limit_right = 2500
+limit_bottom = 650
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_horizontal_offset = 0.2
+drag_vertical_offset = 0.2

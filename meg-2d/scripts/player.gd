@@ -5,6 +5,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 
+#push force
+var push_force = 80.0 
 
 func _physics_process(delta: float) -> void:
 	# Add animation
@@ -31,6 +33,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	#slide collision
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		#if the thing we collided w was a RigidBody
+		if c.get_collider() is RigidBody2D:
+			#apply impulse
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+			
 	
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
