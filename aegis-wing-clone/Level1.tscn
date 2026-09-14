@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://muk7ogddmqoc"]
 
+[ext_resource type="Script" uid="uid://bmf35xdblf7fp" path="res://level_1.gd" id="1_cove1"]
 [ext_resource type="PackedScene" uid="uid://nagf7oi621dx" path="res://player.tscn" id="1_kyxg0"]
+[ext_resource type="PackedScene" uid="uid://f6tfslt2uqi2" path="res://Enemy.tscn" id="2_mc20k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qk2wm"]
 
 [node name="Level1" type="Node2D" unique_id=297095696]
+script = ExtResource("1_cove1")
+enemyScene = ExtResource("2_mc20k")
 
 [node name="WorldBorder" type="StaticBody2D" parent="." unique_id=2089165088]
 metadata/_edit_group_ = true
@@ -30,3 +34,6 @@ shape = SubResource("WorldBoundaryShape2D_qk2wm")
 
 [node name="Player" parent="." unique_id=752163641 instance=ExtResource("1_kyxg0")]
 position = Vector2(128, 64)
+
+[node name="Enemy" parent="." unique_id=50616181 instance=ExtResource("2_mc20k")]
+position = Vector2(1200, 640)

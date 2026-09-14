@@ -12,3 +12,7 @@ func _process(delta: float) -> void:
 
 signal LoadLevel
 signal MainMenu
+signal KillPlayer
+signal YouDied
+
+var SPEED = 400

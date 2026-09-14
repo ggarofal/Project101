@@ -3,10 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dvm4qdxrl5rti" path="res://MainMenu.tscn" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://b426esnxo4vds" path="res://GameManager.gd" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://muk7ogddmqoc" path="res://Level1.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://dy2svc7hr6bkm" path="res://DeathScreen.tscn" id="4_cm0pq"]
 
 [node name="Main" type="Node" unique_id=1010604581]
 script = ExtResource("1_uu6xs")
 level1 = ExtResource("2_r0du0")
 menu1 = ExtResource("1_glv2v")
+deathscreen1 = ExtResource("4_cm0pq")
 
 [node name="MainMenu" parent="." unique_id=41152191 instance=ExtResource("1_glv2v")]
