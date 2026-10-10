@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cfmtkec2mvdp7"]
 
 [ext_resource type="PackedScene" uid="uid://b1bg3vrtm0erc" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bbfup0qci08qs" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://cvurqp6nufb8p" path="res://icon.svg" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://n34cwlrur74x" path="res://scenes/soccer.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://cgkrnas8wfuru" path="res://assets/images/others/floor.jpg" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://d0h4nt8s7v23k" path="res://assets/images/others/goal.png" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://b1isopgwpdri4" path="res://scripts/goal.gd" id="5_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ljtf"]
 size = Vector2(119, 125)
@@ -14,7 +17,28 @@ size = Vector2(123.5, 123)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(3608, 43)
 
+[sub_resource type="GDScript" id="GDScript_o6xl0"]
+script/source = "extends Area2D
+
+
+# Called when the nothede enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysj84"]
+size = Vector2(76, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(11.628284, 208.02777)
+
 [node name="Main" type="Node2D" unique_id=2129665308]
+script = ExtResource("1_o6xl0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1952248021]
 position = Vector2(104, 236)
@@ -54,3 +78,28 @@ texture = ExtResource("4_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=793129155]
 position = Vector2(1534, 626.5)
 shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="goal" type="Node2D" parent="." unique_id=19649915]
+script = ExtResource("5_tefeu")
+
+[node name="scoreZone" type="Area2D" parent="goal" unique_id=453754921]
+script = SubResource("GDScript_o6xl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal/scoreZone" unique_id=2140627300]
+position = Vector2(53, 548)
+shape = SubResource("RectangleShape2D_ysj84")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="goal/scoreZone" unique_id=1102573972]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal/scoreZone/StaticBody2D4" unique_id=392247957]
+position = Vector2(37.000004, 550.00006)
+rotation = 0.2443461
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_tipki")
+
+[node name="Sprite2D" type="Sprite2D" parent="goal/scoreZone/StaticBody2D4" unique_id=269262163]
+position = Vector2(54, 545)
+scale = Vector2(0.16210938, 0.37333336)
+texture = ExtResource("5_tbgi4")

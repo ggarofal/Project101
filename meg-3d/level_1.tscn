@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://de0s7lx4rrp2u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ljtf"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilcil"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D" unique_id=1466909242]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2006175276]
+transform = Transform3D(0.8736384, -0.18327606, 0.45073926, -0.023253273, 0.9095651, 0.4149105, -0.48601985, -0.3729629, 0.79036915, 15.548477, 19.040695, 31.777838)
+fov = 33.749996
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=691583606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007813454, 0.16488314, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1477258386]
+mesh = SubResource("BoxMesh_1ljtf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/MeshInstance3D" unique_id=290202961]
+shape = SubResource("BoxShape3D_ilcil")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1977394399]
+transform = Transform3D(-0.16902208, -0.90501004, 0.39036956, -0.35959148, 0.42539024, 0.8305042, -0.91767395, -2.9507657e-08, -0.39733428, 2.4851646, 4.7089095, -1.5378504)
